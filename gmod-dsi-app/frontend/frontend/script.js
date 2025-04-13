@@ -80,6 +80,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+ButtonTypes = [
+  "scprp",
+  "sandbox",
+  "ttt",
+  "darkrp",
+  "swrp",
+  "server-rack",
+  "server-rack",
+  "server-rack",
+  "server-rack",
+];
+
 // Function to generate menu items dynamically
 function generateRadialMenuItems() {
   const menuItemsContainer = document.querySelector(".radial-menu-items");
@@ -94,15 +106,66 @@ function generateRadialMenuItems() {
     menuItem.className =
       "radial-menu-item absolute hidden bg-[#4283BF] h-28 w-28 rounded-[80%] outline-1 outline-[#212121] animate__animated animate__fadeIn";
     menuItem.style.pointerEvents = "auto";
+    menuItem.id = `${i}`;
 
     const button = document.createElement("button");
-    button.className = "radial-button p-2";
+    button.className =
+      "radial-button p-2 flex items-center justify-center w-full h-full";
+    button.id = `${i}`;
+    button.addEventListener("click", function (event) {
+      console.log(`Button ${button.id} clicked!`);
+      ShowServerCreationSys(button.id);
+      event.stopPropagation();
+    });
 
     const img = document.createElement("img");
-    img.src = "assets/scprp.png";
+    let src;
+    console.log("Image source:", src);
+    src = "assets/" + ButtonTypes[i];
+    img.src = src + ".png";
+    img.className = "max-h-[90%] max-w-[90%] m-auto rounded-[80%]";
 
     button.appendChild(img);
     menuItem.appendChild(button);
     menuItemsContainer.appendChild(menuItem);
   }
+}
+
+function ShowServerCreationSys(type) {
+  const actions = {
+    0: () => {
+      location.href = "scprp.html";
+    },
+    1: () => {
+      location.href = "sandbox.html";
+    },
+    2: () => {
+      location.href = "ttt.html";
+    },
+    3: () => {
+      location.href = "darkrp.html";
+    },
+    4: () => {
+      location.href = "swrp.html";
+    },
+    5: () => {
+      /* Placeholder */
+    },
+    6: () => {
+      /* Placeholder */
+    },
+    7: () => {
+      /* Placeholder */
+    },
+    8: () => {
+      /* Placeholder */
+    },
+  };
+  const action = actions[type];
+  if (action) {
+    action();
+  } else {
+    console.error("Invalid type:", type);
+  }
+  console.log("Action executed for type:", type);
 }

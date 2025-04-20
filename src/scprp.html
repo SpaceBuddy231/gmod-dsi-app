@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="w-[100%] h-[100%]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCPRP Configuration</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data:; connect-src 'self' https://cdnjs.cloudflare.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' https://cdnjs.cloudflare.com https://cdn.tailwindcss.com;"
+    />
+  </head>
+  <body class="bg-[#275D8F] w-full h-full">
+    <div
+      id="topbar"
+      class="bg-[#4283BF] w-full h-[12%] flex items-center border-b-2 border-[#212121] shadow-sm"
+    >
+      <div
+        id="logo"
+        class="h-full flex items-center border-r-2 border-[#212121]"
+      >
+        <img
+          src="./assets/scprp.png"
+          class="h-[80%] m-4 max-h-full w-auto object-contain"
+        />
+      </div>
+
+      <div id="title-container">
+        <h1
+          id="title"
+          class="font-['Rubik'] font-semibold text-4xl md:text-5xl lg:text-6xl m-4 underline text-[#212121]"
+        >
+          SCP:RP
+        </h1>
+      </div>
+    </div>
+    <!-- TOPBAR -->
+
+    <div
+      id="control-panel-container"
+      class="w-[100%] h-[70%] flex flex-col p-5"
+    >
+      <div id="upper-part" class="h-full">
+        <div
+          id="install-dir-container"
+          class="w-full justify-center flex flex-col items-center mt-[3%] mb-4"
+        >
+          <p class="font-[Rubik] font-medium text-xl mb-1">
+            Installation Directory
+          </p>
+          <!-- Container styled to match servername input -->
+          <div
+            class="w-[50%] flex items-center bg-[#4283BF] border-2 border-[#212121] rounded-full overflow-hidden"
+          >
+            <input
+              type="text"
+              id="install-dir-input"
+              placeholder="Enter installation directory"
+              class="flex-grow bg-transparent border-none focus:outline-none focus:ring-0 px-4 py-2 text-[#212121] font-[Rubik] placeholder:text-[#212121]/70"
+            />
+            <button
+              id="browse-button"
+              class="flex-shrink-0 bg-transparent border-none focus:outline-none px-4 py-2 text-[#212121] font-[Rubik] hover:text-[#212121]/80 transition-colors duration-200"
+            >
+              Browse...
+            </button>
+          </div>
+        </div>
+        <div
+          id="servername-container"
+          class="w-full justify-center flex flex-col items-center mt-[6%] mb-4"
+        >
+          <p class="font-[Rubik] font-medium text-xl mb-1">Servername</p>
+          <input
+            type="text"
+            id="servername-input"
+            placeholder="Enter server name"
+            class="w-[50%] bg-[#4283BF] border-2 border-[#212121] rounded-full px-4 py-2 text-[#212121] font-[Rubik] placeholder:text-[#212121]/70 focus:outline-none focus:ring-2 focus:ring-[#212121]"
+          />
+        </div>
+      </div>
+      <div id="bottom-part" class="flex justify-center items-center p-4">
+        <button
+          id="start-button"
+          class="bg-[#4283BF] text-[#212121] font-['Rubik'] font-medium px-12 py-5 text-2xl rounded-lg border-2 border-[#212121] hover:bg-[#3a75ab] transition-colors duration-200"
+        >
+          Start
+        </button>
+      </div>
+    </div>
+
+    <script src="./scprp.js" type="module"></script>
+  </body>
+</html>

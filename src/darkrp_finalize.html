@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DarkRP Finalize</title>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      "
+    >
+      <span style="font-size: 2rem; font-family: sans-serif"
+        >This is the finalize page for DarkRP.</span
+      >
+      <div id="finalize-info" class="mt-8 text-center"></div>
+    </div>
+    <script>
+      function getQueryParams() {
+        const params = {};
+        window.location.search.replace(
+          /\??([^=&]+)=([^&]*)/g,
+          (_, k, v) => (params[k] = decodeURIComponent(v))
+        );
+        return params;
+      }
+      const params = getQueryParams();
+      let config = sessionStorage.getItem("config") || params.config || "";
+      let serverName =
+        sessionStorage.getItem("serverName") || params.serverName || "";
+      let installDir =
+        sessionStorage.getItem("installPath") || params.installPath || "";
+      document.getElementById("finalize-info").innerHTML =
+        `<div class='mb-2'><b>Servername:</b> ${
+          serverName || "<i>Not set</i>"
+        }</div>` +
+        `<div class='mb-2'><b>Directory:</b> ${
+          installDir || "<i>Not set</i>"
+        }</div>` +
+        `<div class='mb-2'><b>Config:</b><br><pre class='bg-gray-100 p-2 rounded border border-gray-400 overflow-auto text-sm inline-block text-left'>${
+          config || "<i>Not set</i>"
+        }</pre></div>`;
+    </script>
+  </body>
+</html>

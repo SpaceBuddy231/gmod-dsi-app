@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="w-[100%] h-[100%]">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sandbox Configuration</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; img-src 'self' data:; connect-src 'self' https://cdnjs.cloudflare.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.tailwindcss.com;"
+    />
+  </head>
+  <body class="bg-[#275D8F] w-full h-full">
+    <div
+      id="topbar"
+      class="bg-[#4283BF] w-full h-[12%] flex items-center border-b-2 border-[#212121] shadow-sm"
+    >
+      <div
+        id="logo"
+        class="h-full flex items-center border-r-2 border-[#212121]"
+      >
+        <img
+          src="./assets/sandbox.png"
+          class="h-[80%] m-4 max-h-full w-auto object-contain"
+        />
+      </div>
+      <div id="title-container">
+        <h1
+          id="title"
+          class="font-['Rubik'] font-semibold text-4xl md:text-5xl lg:text-6xl m-4 underline text-[#212121]"
+        >
+          Sandbox
+        </h1>
+      </div>
+    </div>
+    <div
+      class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 font-['Rubik'] text-[#212121]"
+    >
+      <div class="bg-[#A9D2FF] p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Server Settings</h2>
+        <div class="mb-2">
+          <label for="hostname" class="block mb-1">Hostname:</label>
+          <input
+            type="text"
+            id="hostname"
+            name="hostname"
+            class="w-full p-1 border border-gray-400 rounded"
+          />
+        </div>
+        <div class="mb-2">
+          <label for="rcon_password" class="block mb-1">RCON Password:</label>
+          <input
+            type="password"
+            id="rcon_password"
+            name="rcon_password"
+            class="w-full p-1 border border-gray-400 rounded"
+          />
+        </div>
+        <div class="mb-2">
+          <label for="sv_password" class="block mb-1">Server Password:</label>
+          <input
+            type="password"
+            id="sv_password"
+            name="sv_password"
+            class="w-full p-1 border border-gray-400 rounded"
+          />
+        </div>
+        <div class="mb-2">
+          <label for="sv_downloadurl" class="block mb-1">Download URL:</label>
+          <input
+            type="url"
+            id="sv_downloadurl"
+            name="sv_downloadurl"
+            class="w-full p-1 border border-gray-400 rounded"
+          />
+        </div>
+        <div class="mb-2">
+          <label for="sv_loadingurl" class="block mb-1">Loading URL:</label>
+          <input
+            type="url"
+            id="sv_loadingurl"
+            name="sv_loadingurl"
+            class="w-full p-1 border border-gray-400 rounded"
+          />
+        </div>
+        <div class="mb-2">
+          <label for="sv_region" class="block mb-1">Region:</label>
+          <input
+            type="text"
+            id="sv_region"
+            name="sv_region"
+            class="w-full p-1 border border-gray-400 rounded"
+          />
+        </div>
+      </div>
+      <div class="bg-[#A9D2FF] p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Toggles</h2>
+        <div class="flex items-center mb-2">
+          <input
+            type="checkbox"
+            id="sv_allowupload"
+            name="sv_allowupload"
+            class="mr-2"
+          />
+          <label for="sv_allowupload">Allow Upload</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input
+            type="checkbox"
+            id="sv_allowcslua"
+            name="sv_allowcslua"
+            class="mr-2"
+          />
+          <label for="sv_allowcslua">Allow Client-Side Lua</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input
+            type="checkbox"
+            id="sv_hibernate_think"
+            name="sv_hibernate_think"
+            class="mr-2"
+          />
+          <label for="sv_hibernate_think">Hibernate Think</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input
+            type="checkbox"
+            id="sv_allowdownload"
+            name="sv_allowdownload"
+            class="mr-2"
+          />
+          <label for="sv_allowdownload">Allow Download</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input type="checkbox" id="sv_cheats" name="sv_cheats" class="mr-2" />
+          <label for="sv_cheats">Enable Cheats</label>
+        </div>
+      </div>
+      <div class="bg-[#A9D2FF] p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Location</h2>
+        <div class="mb-2">
+          <label for="sv_location" class="block mb-1">Server Location:</label>
+          <select
+            id="sv_location"
+            name="sv_location"
+            class="w-full p-1 border border-gray-400 rounded"
+          >
+            <option value="af">Afghanistan</option>
+            <option value="eg">Ägypten</option>
+            <option value="al">Albanien</option>
+            <option value="dz">Algerien</option>
+            <option value="ad">Andorra</option>
+            <option value="ao">Angola</option>
+            <option value="ag">Antigua und Barbuda</option>
+            <option value="gq">Äquatorialguinea</option>
+            <option value="ar">Argentinien</option>
+            <option value="am">Armenien</option>
+            <option value="az">Aserbaidschan</option>
+            <option value="et">Äthiopien</option>
+            <option value="au">Australien</option>
+            <option value="bs">Bahamas</option>
+            <option value="bh">Bahrain</option>
+            <option value="bd">Bangladesch</option>
+            <option value="bb">Barbados</option>
+            <option value="by">Belarus</option>
+            <option value="be">Belgien</option>
+            <option value="bz">Belize</option>
+            <option value="bj">Benin</option>
+            <option value="bt">Bhutan</option>
+            <option value="bo">Bolivien</option>
+            <option value="ba">Bosnien und Herzegowina</option>
+            <option value="bw">Botswana</option>
+            <option value="br">Brasilien</option>
+            <option value="bn">Brunei</option>
+            <option value="bg">Bulgarien</option>
+            <option value="bf">Burkina Faso</option>
+            <option value="bi">Burundi</option>
+            <option value="cl">Chile</option>
+            <option value="cn">Volksrepublik China</option>
+            <option value="cr">Costa Rica</option>
+            <option value="dk">Dänemark</option>
+            <option value="de">Deutschland</option>
+            <option value="dm">Dominica</option>
+            <option value="do">Dominikanische Republik</option>
+            <option value="dj">Dschibuti</option>
+            <option value="ec">Ecuador</option>
+            <option value="ci">Elfenbeinküste</option>
+            <option value="sv">El Salvador</option>
+            <option value="er">Eritrea</option>
+            <option value="ee">Estland</option>
+            <option value="sz">Eswatini</option>
+            <option value="fj">Fidschi</option>
+            <option value="fi">Finnland</option>
+            <option value="fr">Frankreich</option>
+            <option value="ga">Gabun</option>
+            <option value="gm">Gambia</option>
+            <option value="ge">Georgien</option>
+            <option value="gh">Ghana</option>
+            <option value="gd">Grenada</option>
+            <option value="gr">Griechenland</option>
+            <option value="gt">Guatemala</option>
+            <option value="gn">Guinea</option>
+            <option value="gw">Guinea-Bissau</option>
+            <option value="gy">Guyana</option>
+            <option value="ht">Haiti</option>
+            <option value="hn">Honduras</option>
+            <option value="in">Indien</option>
+            <option value="id">Indonesien</option>
+            <option value="iq">Irak</option>
+            <option value="ir">Iran</option>
+            <option value="ie">Irland</option>
+            <option value="is">Island</option>
+            <option value="il">Israel</option>
+            <option value="it">Italien</option>
+            <option value="jm">Jamaika</option>
+            <option value="jp">Japan</option>
+            <option value="ye">Jemen</option>
+            <option value="jo">Jordanien</option>
+            <option value="kh">Kambodscha</option>
+            <option value="cm">Kamerun</option>
+            <option value="ca">Kanada</option>
+            <option value="cv">Kap Verde</option>
+            <option value="kz">Kasachstan</option>
+            <option value="qa">Katar</option>
+            <option value="ke">Kenia</option>
+            <option value="kg">Kirgisistan</option>
+            <option value="ki">Kiribati</option>
+            <option value="co">Kolumbien</option>
+            <option value="km">Komoren</option>
+            <option value="cd">Kongo, Demokratische Republik</option>
+            <option value="cg">Kongo, Republik</option>
+            <option value="kp">Korea, Nord</option>
+            <option value="kr">Korea, Süd</option>
+            <option value="hr">Kroatien</option>
+            <option value="cu">Kuba</option>
+            <option value="kw">Kuwait</option>
+            <option value="la">Laos</option>
+            <option value="ls">Lesotho</option>
+            <option value="lv">Lettland</option>
+            <option value="lb">Libanon</option>
+            <option value="lr">Liberia</option>
+            <option value="ly">Libyen</option>
+            <option value="li">Liechtenstein</option>
+            <option value="lt">Litauen</option>
+            <option value="lu">Luxemburg</option>
+            <option value="mg">Madagaskar</option>
+            <option value="mw">Malawi</option>
+            <option value="my">Malaysia</option>
+            <option value="mv">Malediven</option>
+            <option value="ml">Mali</option>
+            <option value="mt">Malta</option>
+            <option value="ma">Marokko</option>
+            <option value="mh">Marshallinseln</option>
+            <option value="mr">Mauretanien</option>
+            <option value="mu">Mauritius</option>
+            <option value="mx">Mexiko</option>
+            <option value="fm">Mikronesien</option>
+            <option value="md">Moldau</option>
+            <option value="mc">Monaco</option>
+            <option value="mn">Mongolei</option>
+            <option value="me">Montenegro</option>
+            <option value="mz">Mosambik</option>
+            <option value="mm">Myanmar</option>
+            <option value="na">Namibia</option>
+            <option value="nr">Nauru</option>
+            <option value="np">Nepal</option>
+            <option value="nz">Neuseeland</option>
+            <option value="ni">Nicaragua</option>
+            <option value="nl">Niederlande</option>
+            <option value="ne">Niger</option>
+            <option value="ng">Nigeria</option>
+            <option value="mk">Nordmazedonien</option>
+            <option value="no">Norwegen</option>
+            <option value="om">Oman</option>
+            <option value="at">Österreich</option>
+            <option value="tl">Osttimor</option>
+            <option value="pk">Pakistan</option>
+            <option value="pw">Palau</option>
+            <option value="pa">Panama</option>
+            <option value="pg">Papua-Neuguinea</option>
+            <option value="py">Paraguay</option>
+            <option value="pe">Peru</option>
+            <option value="ph">Philippinen</option>
+            <option value="pl">Polen</option>
+            <option value="pt">Portugal</option>
+            <option value="rw">Ruanda</option>
+            <option value="ro">Rumänien</option>
+            <option value="ru">Russland</option>
+            <option value="sb">Salomonen</option>
+            <option value="zm">Sambia</option>
+            <option value="ws">Samoa</option>
+            <option value="sm">San Marino</option>
+            <option value="st">São Tomé und Príncipe</option>
+            <option value="sa">Saudi-Arabien</option>
+            <option value="se">Schweden</option>
+            <option value="ch">Schweiz</option>
+            <option value="sn">Senegal</option>
+            <option value="rs">Serbien</option>
+            <option value="sc">Seychellen</option>
+            <option value="sl">Sierra Leone</option>
+            <option value="zw">Simbabwe</option>
+            <option value="sg">Singapur</option>
+            <option value="sk">Slowakei</option>
+            <option value="si">Slowenien</option>
+            <option value="so">Somalia</option>
+            <option value="es">Spanien</option>
+            <option value="lk">Sri Lanka</option>
+            <option value="kn">St. Kitts und Nevis</option>
+            <option value="lc">St. Lucia</option>
+            <option value="vc">St. Vincent und die Grenadinen</option>
+            <option value="za">Südafrika</option>
+            <option value="sd">Sudan</option>
+            <option value="ss">Südsudan</option>
+            <option value="sr">Suriname</option>
+            <option value="sy">Syrien</option>
+            <option value="tj">Tadschikistan</option>
+            <option value="tz">Tansania</option>
+            <option value="th">Thailand</option>
+            <option value="tg">Togo</option>
+            <option value="to">Tonga</option>
+            <option value="tt">Trinidad und Tobago</option>
+            <option value="td">Tschad</option>
+            <option value="cz">Tschechien</option>
+            <option value="tn">Tunesien</option>
+            <option value="tr">Türkei</option>
+            <option value="tm">Turkmenistan</option>
+            <option value="tv">Tuvalu</option>
+            <option value="ug">Uganda</option>
+            <option value="ua">Ukraine</option>
+            <option value="hu">Ungarn</option>
+            <option value="uy">Uruguay</option>
+            <option value="uz">Usbekistan</option>
+            <option value="vu">Vanuatu</option>
+            <option value="ve">Venezuela</option>
+            <option value="ae">Vereinigte Arabische Emirate</option>
+            <option value="us">Vereinigte Staaten</option>
+            <option value="gb">Vereinigtes Königreich</option>
+            <option value="vn">Vietnam</option>
+            <option value="cf">Zentral­afrikanische Republik</option>
+            <option value="cy">Zypern</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="p-4 font-['Rubik'] text-[#212121]">
+      <div class="bg-[#A9D2FF] p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-2">Config Preview</h2>
+        <pre
+          id="config-preview"
+          class="bg-gray-100 p-2 rounded border border-gray-400 overflow-auto text-sm"
+        >
+hostname "Garry's Mod"
+rcon_password ""
+sv_password ""
+sv_downloadurl ""
+sv_loadingurl ""
+sv_allowupload 0
+sv_allowdownload 0
+sv_allowcslua 0
+sv_cheats 0
+sv_hibernate_think 0
+sv_location "de"
+sv_region 255</pre
+        >
+      </div>
+    </div>
+    <div class="w-full flex justify-center mt-8 mb-4">
+      <a id="finalize-link" href="sandbox_finalize.html">
+        <button
+          class="bg-[#4283BF] text-[#212121] font-['Rubik'] text-2xl px-10 py-4 rounded-lg border-2 border-[#212121] transition-colors duration-200 hover:bg-[#3a75ab] focus:outline-none mb-8"
+        >
+          Start Finalizing
+        </button>
+      </a>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Get references to all input elements
+        const hostnameInput = document.getElementById("hostname");
+        const rconPasswordInput = document.getElementById("rcon_password");
+        const svPasswordInput = document.getElementById("sv_password");
+        const svDownloadUrlInput = document.getElementById("sv_downloadurl");
+        const svLoadingUrlInput = document.getElementById("sv_loadingurl");
+        const svRegionInput = document.getElementById("sv_region");
+
+        const svAllowUploadCheckbox = document.getElementById("sv_allowupload");
+        const svAllowCsluaCheckbox = document.getElementById("sv_allowcslua");
+        const svHibernateThinkCheckbox =
+          document.getElementById("sv_hibernate_think");
+        const svAllowDownloadCheckbox =
+          document.getElementById("sv_allowdownload");
+        const svCheatsCheckbox = document.getElementById("sv_cheats");
+
+        const svLocationSelect = document.getElementById("sv_location");
+        const configPreview = document.getElementById("config-preview");
+
+        // Function to update the preview text
+        function updateConfigPreview() {
+          // Get current values, providing defaults if empty
+          const hostname = hostnameInput.value || "Garry's Mod";
+          const rconPassword = rconPasswordInput.value || "";
+          const svPassword = svPasswordInput.value || "";
+          const svDownloadUrl = svDownloadUrlInput.value || "";
+          const svLoadingUrl = svLoadingUrlInput.value || "";
+          // Use the selected value from the dropdown, default to 'de' if nothing selected
+          const svLocation = svLocationSelect.value || "de";
+          // Use input value for region, default to 255 if empty
+          const svRegion = svRegionInput.value || "255";
+
+          // Convert checkbox states to 0 or 1
+          const svAllowUpload = svAllowUploadCheckbox.checked ? 1 : 0;
+          const svAllowDownload = svAllowDownloadCheckbox.checked ? 1 : 0;
+          const svAllowCslua = svAllowCsluaCheckbox.checked ? 1 : 0;
+          const svCheats = svCheatsCheckbox.checked ? 1 : 0;
+          const svHibernateThink = svHibernateThinkCheckbox.checked ? 1 : 0;
+
+          // Format the preview string
+          const previewText = `hostname "${hostname}"
+rcon_password "${rconPassword}"
+sv_password "${svPassword}"
+sv_downloadurl "${svDownloadUrl}"
+sv_loadingurl "${svLoadingUrl}"
+sv_allowupload ${svAllowUpload}
+sv_allowdownload ${svAllowDownload}
+sv_allowcslua ${svAllowCslua}
+sv_cheats ${svCheats}
+sv_hibernate_think ${svHibernateThink}
+sv_location "${svLocation}"
+sv_region ${svRegion}`;
+
+          // Update the preview element's text content
+          configPreview.textContent = previewText;
+        }
+
+        // List of all input elements to attach listeners to
+        const inputsToMonitor = [
+          hostnameInput,
+          rconPasswordInput,
+          svPasswordInput,
+          svDownloadUrlInput,
+          svLoadingUrlInput,
+          svRegionInput,
+          svAllowUploadCheckbox,
+          svAllowCsluaCheckbox,
+          svHibernateThinkCheckbox,
+          svAllowDownloadCheckbox,
+          svCheatsCheckbox,
+          svLocationSelect,
+        ];
+
+        // Attach the appropriate event listener to each input element
+        inputsToMonitor.forEach((input) => {
+          // Use 'change' for checkboxes and select dropdowns
+          if (input.type === "checkbox" || input.tagName === "SELECT") {
+            input.addEventListener("change", updateConfigPreview);
+          }
+          // Use 'input' for text, password, and url fields for immediate updates
+          else {
+            input.addEventListener("input", updateConfigPreview);
+          }
+        });
+
+        // Initial call to populate the preview when the page loads
+        updateConfigPreview();
+      });
+      function getConfigPreview() {
+        return document.getElementById("config-preview").textContent.trim();
+      }
+      function getInstallDir() {
+        const url = new URL(window.location.href);
+        return (
+          url.searchParams.get("installPath") ||
+          sessionStorage.getItem("installPath") ||
+          ""
+        );
+      }
+      function getServerName() {
+        const url = new URL(window.location.href);
+        return (
+          url.searchParams.get("serverName") ||
+          sessionStorage.getItem("serverName") ||
+          ""
+        );
+      }
+      document
+        .getElementById("finalize-link")
+        .addEventListener("click", function () {
+          sessionStorage.setItem("config", getConfigPreview());
+          sessionStorage.setItem("installPath", getInstallDir());
+          sessionStorage.setItem("serverName", getServerName());
+        });
+    </script>
+  </body>
+</html>

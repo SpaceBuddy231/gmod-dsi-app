@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de" class="w-[100%] h-[100%]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GMod DSI</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; script-src 'self' https://cdnjs.cloudflare.com https://cdn.tailwindcss.com;"
+    />
+  </head>
+  <body class="bg-[#275D8F] w-[100%] h-[100%]">
+    <div
+      class="radial-menu-container flex items-center justify-center h-full w-full"
+    >
+      <div
+        class="radial-menu-items-container absolute flex justify-center h-full w-full left-0 top-0"
+        style="pointer-events: none"
+      >
+        <div
+          class="radial-menu-items relative w-full h-full flex items-center justify-center"
+        ></div>
+      </div>
+      <div
+        class="radial-menu-center block bg-[#4283BF] h-80 w-80 rounded-[80%] outline-2 outline-[#212121]"
+      >
+        <button class="radial-menu-toggle p-2 w-full h-full rounded-[80%]">
+          <img src="assets/server-rack.png" />
+        </button>
+      </div>
+    </div>
+    <div id="gamemode-selection" class="flex flex-wrap justify-center"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
